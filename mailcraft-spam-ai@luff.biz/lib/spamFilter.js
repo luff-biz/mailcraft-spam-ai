@@ -19,11 +19,14 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gio from 'gi://Gio';
 
-import {CommandError, ControlChannelMissingError, MailCraftClient, plainText} from './mailcraftClient.js';
+import {CommandError, ControlChannelMissingError, MailCraftClient, keyFiles, plainText} from './mailcraftClient.js';
 import {HttpError, LlmClient, VerdictError} from './llmClient.js';
 import {buildPrompt} from './prompt.js';
 
 const LIST_LIMIT = 500;
+// After MailCraft writes or removes its key file, wait this long before looking,
+// so it has opened (or closed) its port.
+const KEY_CHANGE_DELAY_SECONDS = 3;
 const MAX_ATTEMPTS = 3;
 // Handled message ids kept per account. Ids of mail that left the inbox stay
 // in the list, so a message the user takes back out of junk is not checked
@@ -155,6 +158,8 @@ export const SpamFilter = GObject.registerClass({
         this._movedToday = 0;
         this._attempts = new Map();
         this._timeoutId = 0;
+        this._keyChangeId = 0;
+        this._keyMonitors = [];
         this._running = false;
         this._cancellable = null;
         // Raised by every _sync() and by destroy(), so a _sync() that awaited
@@ -165,6 +170,7 @@ export const SpamFilter = GObject.registerClass({
         this._settings.connectObject(
             'changed::enabled', () => this._sync(true),
             'changed::interval-minutes', () => this._sync(false),
+            'changed::control-port', () => this._sync(false),
             this);
         this._sync(false);
         this._countMovedToday();
@@ -235,6 +241,7 @@ export const SpamFilter = GObject.registerClass({
                 return;
         }
         this._setState(FilterState.IDLE);
+        this._watchKeyFiles();
         this._timeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT,
             this._settings.get_int('interval-minutes') * 60, () => {
                 this.checkNow();
@@ -247,6 +254,43 @@ export const SpamFilter = GObject.registerClass({
         if (this._timeoutId) {
             GLib.source_remove(this._timeoutId);
             this._timeoutId = 0;
+        }
+        if (this._keyChangeId) {
+            GLib.source_remove(this._keyChangeId);
+            this._keyChangeId = 0;
+        }
+        this._keyMonitors.forEach(monitor => monitor.cancel());
+        this._keyMonitors = [];
+    }
+
+    /**
+     * MailCraft writes its key file when it opens the control channel and
+     * removes it when it quits. Watching the file lets the filter look right
+     * away instead of at the next round, so the toggle is up to date.
+     */
+    _watchKeyFiles() {
+        for (const file of keyFiles(this._settings.get_int('control-port'))) {
+            let monitor;
+            try {
+                monitor = file.monitor_file(Gio.FileMonitorFlags.NONE, null);
+            } catch {
+                // A folder that does not exist (no native install) is fine.
+                continue;
+            }
+            monitor.connect('changed', (_m, _file, _other, event) => {
+                if (![Gio.FileMonitorEvent.CREATED, Gio.FileMonitorEvent.DELETED,
+                    Gio.FileMonitorEvent.CHANGES_DONE_HINT].includes(event))
+                    return;
+                if (this._keyChangeId)
+                    GLib.source_remove(this._keyChangeId);
+                this._keyChangeId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT,
+                    KEY_CHANGE_DELAY_SECONDS, () => {
+                        this._keyChangeId = 0;
+                        this.checkNow();
+                        return GLib.SOURCE_REMOVE;
+                    });
+            });
+            this._keyMonitors.push(monitor);
         }
     }
 

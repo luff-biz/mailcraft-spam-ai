@@ -102,7 +102,7 @@ export function plainText(value) {
  * @param {number} port the control port
  * @returns {Gio.File[]} candidate key files
  */
-function keyFiles(port) {
+export function keyFiles(port) {
     const name = `control-key.local-${port}`;
     return [
         GLib.build_filenamev([GLib.get_home_dir(), '.var', 'app', FLATPAK_ID,

@@ -33,6 +33,8 @@ taken over and what was changed.
   are still checked. When the same error hits two messages in a row, it is not about the
   messages: the round ends and the toggle shows the error.
 - A *Spam Filter* toggle in Quick Settings shows the state and the last messages moved to junk.
+  When MailCraft starts or quits, the filter notices within seconds (it watches MailCraft's key
+  file) and the toggle follows.
   The last 100 checks are kept in `~/.local/state/mailcraft-spam-ai@luff.biz/`, on this computer
   only.
 

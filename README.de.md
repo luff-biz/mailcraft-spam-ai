@@ -34,7 +34,8 @@ wurde, steht in [NOTICE.md](NOTICE.md).
   gelassen; die Mails danach werden trotzdem geprüft. Trifft derselbe Fehler zwei Mails
   hintereinander, liegt er nicht an den Mails: Die Runde endet, und der Schalter zeigt den Fehler.
 - Ein Schalter „Spamfilter“ in den Schnelleinstellungen zeigt den Zustand und die zuletzt
-  verschobenen Mails. Die letzten 100 Prüfungen liegen in
+  verschobenen Mails. Startet oder beendet sich MailCraft, merkt der Filter das binnen Sekunden
+  (er beobachtet die Schlüsseldatei von MailCraft), und der Schalter zieht nach. Die letzten 100 Prüfungen liegen in
   `~/.local/state/mailcraft-spam-ai@luff.biz/`, nur auf diesem Rechner.
 
 ## Sicherheit
