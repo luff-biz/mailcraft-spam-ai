@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="mailcraft-spam-ai">
+  <enum id="org.gnome.shell.extensions.mailcraft-spam-ai.Backend">
+    <value nick="ollama" value="0"/>
+    <value nick="openai" value="1"/>
+  </enum>
+  <schema id="org.gnome.shell.extensions.mailcraft-spam-ai"
+          path="/org/gnome/shell/extensions/mailcraft-spam-ai/">
+    <key name="enabled" type="b">
+      <default>false</default>
+      <summary>Spam filter enabled</summary>
+    </key>
+    <key name="control-port" type="i">
+      <range min="1024" max="65535"/>
+      <default>7991</default>
+      <summary>Port of the MailCraft control channel</summary>
+      <description>MailCraft must be started with --control and this port.</description>
+    </key>
+    <key name="backend" enum="org.gnome.shell.extensions.mailcraft-spam-ai.Backend">
+      <default>'ollama'</default>
+      <summary>Kind of language model endpoint</summary>
+    </key>
+    <key name="endpoint" type="s">
+      <default>'http://127.0.0.1:11434'</default>
+      <summary>Address of the language model endpoint</summary>
+      <description>For Ollama the server address, for OpenAI-compatible endpoints the base address including /v1.</description>
+    </key>
+    <key name="model" type="s">
+      <default>''</default>
+      <summary>Model used to judge mail</summary>
+    </key>
+    <key name="threshold" type="i">
+      <range min="0" max="100"/>
+      <default>70</default>
+      <summary>Spam threshold</summary>
+      <description>Mail with a spam value at or above this threshold is moved to the junk folder.</description>
+    </key>
+    <key name="interval-minutes" type="i">
+      <range min="1" max="120"/>
+      <default>5</default>
+      <summary>Minutes between checks of the inbox</summary>
+    </key>
+    <key name="max-chars" type="i">
+      <range min="500" max="100000"/>
+      <default>8000</default>
+      <summary>Longest mail text sent to the model, in characters</summary>
+    </key>
+    <key name="skip-senders" type="as">
+      <default>[]</default>
+      <summary>Senders that are never checked</summary>
+      <description>Full addresses (user@example.org) or whole domains (@example.org).</description>
+    </key>
+    <key name="skip-sent" type="b">
+      <default>true</default>
+      <summary>Never check senders you have written to</summary>
+    </key>
+    <key name="skip-contacts" type="b">
+      <default>true</default>
+      <summary>Never check senders in your MailCraft contacts</summary>
+    </key>
+    <key name="accounts" type="ai">
+      <default>[]</default>
+      <summary>MailCraft accounts to filter</summary>
+      <description>Account ids. Empty means every account.</description>
+    </key>
+  </schema>
+</schemalist>

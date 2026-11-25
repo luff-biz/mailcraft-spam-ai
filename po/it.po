@@ -1,0 +1,362 @@
+# Translation of MailCraft Spam AI.
+# This file is distributed under the same license as the mailcraft-spam-ai package.
+# Machine-assisted translation; corrections welcome.
+msgid ""
+msgstr ""
+"Project-Id-Version: mailcraft-spam-ai 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/luff-biz/mailcraft-spam-ai/issues\n"
+"POT-Creation-Date: 2026-11-25 15:07+0100\n"
+"PO-Revision-Date: 2026-11-25 14:00+0100\n"
+"Last-Translator: MailCraft Spam AI contributors\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:37
+msgid "Connection"
+msgstr "Connessione"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:42
+msgid "MailCraft"
+msgstr "MailCraft"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:45
+msgid "MailCraft must open its control channel. For the Flatpak, Set Up does this on every start; otherwise start it with: mailcraft --control <port> --control-agents-only"
+msgstr "MailCraft deve aprire il suo canale di controllo. Con il Flatpak, «Configura» lo fa a ogni avvio; altrimenti avvialo con: mailcraft --control <port> --control-agents-only"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:48
+msgid "Control Port"
+msgstr "Porta di controllo"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:56
+msgid "Open the Control Channel on Every Start"
+msgstr "Apri il canale di controllo a ogni avvio"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:59
+#: mailcraft-spam-ai@luff.biz/prefs.js:393
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:60
+msgid "MailCraft no longer gets the two settings, also if they were set by hand"
+msgstr "MailCraft non riceve più le due impostazioni, anche se erano state impostate a mano"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:80
+msgid "Only for the Flatpak of MailCraft. Otherwise start it with --control and the port."
+msgstr "Solo per il Flatpak di MailCraft. Altrimenti avvialo con --control e la porta."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:86
+#, javascript-format
+msgid "Set up: MailCraft opens port %d on every start, for agents only."
+msgstr "Configurato: MailCraft apre la porta %d a ogni avvio, solo per gli agenti."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:87
+#: mailcraft-spam-ai@luff.biz/prefs.js:94
+msgid "Set Up"
+msgstr "Configura"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:92
+msgid "Not set up. MailCraft needs a restart afterwards."
+msgstr "Non configurato. Dopo occorre riavviare MailCraft."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:93
+#, javascript-format
+msgid "Set up for port %d, not %d. MailCraft needs a restart afterwards."
+msgstr "Configurato per la porta %d, non %d. Dopo occorre riavviare MailCraft."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:103
+msgid "Done. Restart MailCraft to use it."
+msgstr "Fatto. Riavvia MailCraft per usarlo."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:105
+#, javascript-format
+msgid "Could not set up MailCraft: %s"
+msgstr "Impossibile configurare MailCraft: %s"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:113
+#, javascript-format
+msgid "Could not remove the setup: %s"
+msgstr "Impossibile rimuovere la configurazione: %s"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:122
+msgid "Language Model"
+msgstr "Modello linguistico"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:126
+msgid "Mail is only sent to the endpoint entered here, which is on this computer."
+msgstr "La posta viene inviata solo all’endpoint indicato qui, che si trova su questo computer."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:128
+msgid "Warning: this endpoint is not on this computer and the connection is not encrypted. The text of every checked mail is sent there."
+msgstr "Attenzione: questo endpoint non è su questo computer e la connessione non è cifrata. Il testo di ogni messaggio controllato viene inviato lì."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:129
+msgid "This endpoint is not on this computer: the text of every checked mail is sent there."
+msgstr "Questo endpoint non è su questo computer: il testo di ogni messaggio controllato viene inviato lì."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:133
+msgid "Kind of Endpoint"
+msgstr "Tipo di endpoint"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:134
+msgid "Ollama"
+msgstr "Ollama"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:134
+msgid "OpenAI-compatible"
+msgstr "Compatibile con OpenAI"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:142
+msgid "Address"
+msgstr "Indirizzo"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:150
+#: mailcraft-spam-ai@luff.biz/prefs.js:176
+msgid "API Key (kept in the keyring)"
+msgstr "Chiave API (conservata nel portachiavi)"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:159
+msgid "MailCraft Spam AI API key"
+msgstr "Chiave API di MailCraft Spam AI"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:161
+msgid "API key saved"
+msgstr "Chiave API salvata"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:163
+#, javascript-format
+msgid "Could not save the API key: %s"
+msgstr "Impossibile salvare la chiave API: %s"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:175
+msgid "API Key (saved; enter a new one to replace it)"
+msgstr "Chiave API (salvata; inseriscine una nuova per sostituirla)"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:178
+msgid "API Key (keyring not available)"
+msgstr "Chiave API (portachiavi non disponibile)"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:189
+msgid "Model"
+msgstr "Modello"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:195
+msgid "Load the models of the endpoint"
+msgstr "Carica i modelli dell’endpoint"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:208
+msgid "No model chosen"
+msgstr "Nessun modello scelto"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:209
+#, javascript-format
+msgid "%s (not offered by the endpoint)"
+msgstr "%s (non offerto dall’endpoint)"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:229
+msgid "The endpoint offers no models"
+msgstr "L’endpoint non offre modelli"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:235
+#, javascript-format
+msgid "Endpoint not reachable: %s"
+msgstr "Endpoint non raggiungibile: %s"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:264
+msgid "Filter"
+msgstr "Filtro"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:268
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:45
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:56
+msgid "Spam Filter"
+msgstr "Filtro antispam"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:270
+msgid "Spam Threshold"
+msgstr "Soglia spam"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:277
+msgid "Every message will be moved to junk!"
+msgstr "Tutti i messaggi verranno spostati nella posta indesiderata!"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:279
+msgid "Very low: many good messages may be moved to junk."
+msgstr "Molto bassa: molti messaggi validi potrebbero finire nella posta indesiderata."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:280
+msgid "Messages rated at or above this value (0–100) are moved to junk."
+msgstr "I messaggi con questo valore (0–100) o superiore vengono spostati nella posta indesiderata."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:287
+msgid "Check Every (Minutes)"
+msgstr "Controlla ogni (minuti)"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:294
+msgid "Longest Mail Text (Characters)"
+msgstr "Testo dell’email più lungo (caratteri)"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:295
+msgid "Longer mail is shortened before it is sent to the model."
+msgstr "Le email più lunghe vengono accorciate prima di essere inviate al modello."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:303
+msgid "Accounts"
+msgstr "Account"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:304
+msgid "With none chosen, every account is filtered."
+msgstr "Se non ne è scelto nessuno, vengono filtrati tutti gli account."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:309
+msgid "Load the accounts from MailCraft"
+msgstr "Carica gli account da MailCraft"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:339
+msgid "MailCraft not reachable"
+msgstr "MailCraft non raggiungibile"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:356
+msgid "Trusted Senders"
+msgstr "Mittenti attendibili"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:361
+msgid "Never Check Mail From"
+msgstr "Non controllare mai la posta di"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:364
+msgid "People You Have Written To"
+msgstr "Persone a cui hai scritto"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:365
+msgid "Looked up in the Sent folder of the account."
+msgstr "Cercato nella cartella Posta inviata dell’account."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:370
+msgid "Your MailCraft Contacts"
+msgstr "I tuoi contatti di MailCraft"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:377
+msgid "Skip List"
+msgstr "Elenco di esclusione"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:378
+msgid "A full address (user@example.org) or a whole domain (@example.org)."
+msgstr "Un indirizzo completo (user@example.org) o un intero dominio (@example.org)."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:381
+msgid "Add Address or Domain"
+msgstr "Aggiungi indirizzo o dominio"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:420
+msgid "Log"
+msgstr "Registro"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:425
+msgid "Last Checks"
+msgstr "Ultimi controlli"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:426
+msgid "The last 100 checks. Kept only on this computer."
+msgstr "Gli ultimi 100 controlli. Conservati solo su questo computer."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:429
+msgid "Clear"
+msgstr "Svuota"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:438
+#, javascript-format
+msgid "Error, given up and left in the inbox: %s"
+msgstr "Errore, abbandonato e lasciato nella posta in arrivo: %s"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:439
+#, javascript-format
+msgid "Error, will try again: %s"
+msgstr "Errore, verrà ritentato: %s"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:442
+msgid "Trusted sender, not checked"
+msgstr "Mittente attendibile, non controllato"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:443
+msgid "moved to junk"
+msgstr "spostato nella posta indesiderata"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:443
+msgid "left in the inbox"
+msgstr "lasciato nella posta in arrivo"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:446
+msgid "Trusted address, but the sender could not be verified, so it was checked."
+msgstr "Indirizzo fidato, ma non è stato possibile verificare il mittente, quindi è stato controllato."
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:453
+msgid "Nothing checked yet"
+msgstr "Ancora nulla di controllato"
+
+#: mailcraft-spam-ai@luff.biz/prefs.js:460
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:142
+msgid "(no subject)"
+msgstr "(nessun oggetto)"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:37
+msgid "Could not start MailCraft"
+msgstr "Impossibile avviare MailCraft"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:61
+msgid "Start MailCraft with Control Channel"
+msgstr "Avvia MailCraft con il canale di controllo"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:66
+msgid "Check Now"
+msgstr "Controlla ora"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:70
+msgid "Recently Moved to Junk"
+msgstr "Spostati di recente nella posta indesiderata"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:75
+msgid "Spam Filter Settings"
+msgstr "Impostazioni del filtro antispam"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:97
+msgid "Off"
+msgstr "Disattivato"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:100
+msgid "Checking the inbox…"
+msgstr "Controllo della posta in arrivo…"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:103
+msgid "MailCraft is not running with its control channel"
+msgstr "MailCraft non è in esecuzione con il canale di controllo"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:106
+#, javascript-format
+msgid "Error: %s"
+msgstr "Errore: %s"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:109
+#, javascript-format
+msgid "%d message moved today"
+msgid_plural "%d messages moved today"
+msgstr[0] "%d messaggio spostato oggi"
+msgstr[1] "%d messaggi spostati oggi"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:118
+msgid "Needs attention"
+msgstr "Richiede attenzione"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:119
+#, javascript-format
+msgid "%d moved today"
+msgid_plural "%d moved today"
+msgstr[0] "%d spostato oggi"
+msgstr[1] "%d spostati oggi"
+
+#: mailcraft-spam-ai@luff.biz/lib/quickSettings.js:137
+msgid "Nothing moved yet"
+msgstr "Ancora nulla di spostato"

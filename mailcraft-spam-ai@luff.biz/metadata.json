@@ -1,0 +1,19 @@
+{
+  "uuid": "mailcraft-spam-ai@luff.biz",
+  "name": "MailCraft Spam AI",
+  "description": "Checks new mail in MailCraft with a language model (Ollama or any OpenAI-compatible endpoint) and moves spam from the inbox to the junk folder. Based on the spam filter of the Thunderbird add-on ThunderAI.\n\nMailCraft must open its control channel; for the Flatpak, the Set Up button in the preferences does this once for every start.\n\nThe filter keeps running while the screen is locked (session mode unlock-dialog), so mail is sorted while you are away. Nothing is shown on the lock screen.",
+  "shell-version": [
+    "48",
+    "49",
+    "50",
+    "51"
+  ],
+  "url": "https://github.com/luff-biz/mailcraft-spam-ai",
+  "settings-schema": "org.gnome.shell.extensions.mailcraft-spam-ai",
+  "gettext-domain": "mailcraft-spam-ai",
+  "version-name": "0.1.0",
+  "session-modes": [
+    "user",
+    "unlock-dialog"
+  ]
+}
